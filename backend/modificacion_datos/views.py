@@ -10,7 +10,7 @@ from django.contrib.auth.hashers import check_password
 
 
 class ActualizarUsuarioView(APIView):
-    def put(self, request, usuario_id):
+    def post(self, request, usuario_id):
         try:
             usuario = Usuario.objects.get(id=usuario_id)
         except Usuario.DoesNotExist:
