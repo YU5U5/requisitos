@@ -1,0 +1,12 @@
+body{
+    background-image: url(../img/WhatsApp\ Image\ 2025-02-27\ at\ 5.33.38\ PM.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-position: center;
+    background-attachment: fixed;
+}

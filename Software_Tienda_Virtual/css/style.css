@@ -1,0 +1,14 @@
+body {
+    background-image: url("../img/fondojpg.avif");
+    background-repeat: no-repeat;
+    background-size: cover;   /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center center; /* Centra la imagen en todas las resoluciones */
+    background-attachment: fixed; /* Hace que el fondo se mantenga fijo al hacer scroll */
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+

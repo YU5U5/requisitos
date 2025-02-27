@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Incluir Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet"> <!-- Para los íconos de Font Awesome -->
+</head>
+<body>
+    <!-- Navbar con icono de lupa -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Virtual Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <!-- Icono de lupa en la parte superior derecha -->
+                        <button class="btn btn-link" id="searchButton" onclick="toggleSearch()">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <li class="nav-item">
+                            <a href="carrito.html" class="btn btn-link" id="cartButton">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                        <!-- Ícono de información personal -->
+                        <li class="nav-item">
+                            <button class="btn btn-link" id="profileButton" onclick="viewProfile()">
+                                <i class="fa fa-user"></i>
+                            </button>
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario de búsqueda oculto -->
+    <div class="container mt-5" id="searchContainer" style="display: none;">
+        <input type="text" class="form-control" id="searchInput" placeholder="Buscar producto..." onkeyup="searchProduct()">
+    </div>
+
+    <div class="container mt-5">
+        <div class="row" id="productContainer">
+            <!-- Carta del Producto 1 -->
+            <div class="col-md-3 mb-4 product-card" data-name="Board Aorus Z490">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="./img/Gigabyte-Z490-Aorus-Master.jpg" class="card-img-top" alt="Producto A">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Board Aorus Z490 </h5>
+                        <p class="card-text">$860.000</p>
+                        <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Board Aorus Z490', 860000, './img/Gigabyte-Z490-Aorus-Master.jpg')">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carta del Producto 2 -->
+            <div class="col-md-3 mb-4 product-card" data-name="Refrigeracion Liquida MSI 360mm">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="./img/liquidaMSI.jpg" class="card-img-top" alt="Producto B">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Refrigeracion Liquida MSI 360mm</h5>
+                        <p class="card-text">$910.000</p>
+                        <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Refrigeracion Liquida MSI 360mm', 910000, './img/liquidaMSI.jpg')">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carta del Producto 3 -->
+            <div class="col-md-3 mb-4 product-card" data-name="RAM G-SKILL Z Royale 3600Mhz">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="./img/ramzroyale.jpg" class="card-img-top" alt="Producto C">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">RAM G-SKILL Z Royale 3600Mhz</h5>
+                        <p class="card-text">$845.000</p>
+                        <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('RAM G-SKILL Z Royale 3600Mhz', 845000, './img/ramzroyale.jpg')">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carta del Producto 4 -->
+            <div class="col-md-3 mb-4 product-card" data-name="Fuente 850W Cooler Master">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="./img/fuentepodercoolermaster.jpg" class="card-img-top" alt="Producto D">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Fuente 850W Cooler Master</h5>
+                        <p class="card-text">$560.000</p>
+                        <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Fuente 850W Cooler Master', 560000, './img/fuentepodercoolermaster.jpg')">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+<!-- FILA 2 DE PRODUCTOS -->
+
+<div class="container mt-5">
+    <div class="row" id="productContainer">
+        <!-- Carta del Producto 1 -->
+        <div class="col-md-3 mb-4 product-card" data-name="AMD Ryzen 5 5600X">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/amdryzen55600x.jpg" class="card-img-top" alt="Producto A">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">AMD Ryzen 5 5600X</h5>
+                    <p class="card-text">$810.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('AMD Ryzen 5 5600X', 810000, './img/amdryzen55600x.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta del Producto 2 -->
+        <div class="col-md-3 mb-4 product-card" data-name="Gabinete GIM ATX +1FAN RGB">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/gabinetegimatx.jpg" class="card-img-top" alt="Producto B">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Gabinete GIM ATX +1FAN RGB</h5>
+                    <p class="card-text">$420.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Gabinete GIM ATX +1FAN RGB', 420000, './img/gabinetegimatx.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta del Producto 3 -->
+        <div class="col-md-3 mb-4 product-card" data-name="SSD M.2 NvME Crucial 500GB">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/m2nvmecrucial.jpg" class="card-img-top" alt="Producto C">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">SSD M.2 NvME Crucial 500GB</h5>
+                    <p class="card-text">$275.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('SSD M.2 NvME Crucial 500GB', 275000, './img/m2nvmecrucial.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta del Producto 4 -->
+        <div class="col-md-3 mb-4 product-card" data-name="Cooler de procesador Cooler Master hyper 212 spectrum v2 rgb">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/coolerprocesador.jpg" class="card-img-top" alt="Producto D">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Cooler de procesador Cooler Master hyper 212 spectrum v2 rgb</h5>
+                    <p class="card-text">$325.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Cooler de procesador Cooler Master hyper 212 spectrum v2 rgb', 325000, './img/coolerprocesador.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FILA 3 DE PRODUCTOS -->
+
+<div class="container mt-5">
+    <div class="row" id="productContainer">
+        <!-- Carta del Producto 1 -->
+        <div class="col-md-3 mb-4 product-card" data-name="Teclado redragon kumara k552 60%">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/reddragonmecanico.jpg" class="card-img-top" alt="Producto A">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Teclado redragon kumara k552 60%</h5>
+                    <p class="card-text">$253.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Teclado redragon kumara k552 60%', 253000, './img/reddragonmecanico.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta del Producto 2 -->
+        <div class="col-md-3 mb-4 product-card" data-name="Mouse logitech g502 lightspeed">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/MAUSELOGITECHLIGHTSPEED.jpg" class="card-img-top" alt="Producto B">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Mouse logitech g502 lightspeed</h5>
+                    <p class="card-text">$510.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Mouse logitech g502 lightspeed', 510000, './img/MAUSELOGITECHLIGHTSPEED.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta del Producto 3 -->
+        <div class="col-md-3 mb-4 product-card" data-name="Monitor curvo asus tuf gaming vg27vh1b">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/monitorasustuf.jpg" class="card-img-top" alt="Producto C">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Monitor curvo asus tuf gaming vg27vh1b</h5>
+                    <p class="card-text">$1'145.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Monitor curvo asus tuf gaming vg27vh1b', 1145000, './img/monitorasustuf.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta del Producto 4 -->
+        <div class="col-md-3 mb-4 product-card" data-name="Diademas logitech g435">
+            <div class="card h-100 d-flex flex-column">
+                <img src="./img/diademaslogitechg435.jpg" class="card-img-top" alt="Producto D">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Diademas logitech g435</h5>
+                    <p class="card-text">$760.000</p>
+                    <a href="#" class="btn btn-primary mt-auto" onclick="addToCart('Diademas logitech g435', 760000, './img/diademaslogitechg435.jpg')">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/font-awesome/js/all.min.js"></script>
+
+    <script src="./js/script.js"></script>
+
+
+</body>
+</html>
+
