@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'registro',
     'login',
     'modificacion_datos',
-    'carrito',
+    
 ]
 
 MIDDLEWARE = [
