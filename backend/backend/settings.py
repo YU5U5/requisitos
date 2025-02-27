@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registro',
+<<<<<<< HEAD
     'login',
     'modificacion_datos',
     
+=======
+>>>>>>> 9f0485b32bd0fc12d6d1c8d2cabbeba4fbcdec30
 ]
 
 MIDDLEWARE = [
@@ -101,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Tienda',
         'USER': 'root',
-        'PASSWORD': 'Jd1090050183',
+        'PASSWORD': 'kaneki2712',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

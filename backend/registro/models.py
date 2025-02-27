@@ -1,9 +1,8 @@
 from django.db import models
-from django.db import models
-from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.models import BaseUserManager,AbstractBaseUser
 
 
-# Create your models here.
+
 class UsuarioManager(BaseUserManager):
     def create_user(self, correo_electronico, nombre, password=None, **extra_fields):
         if not correo_electronico:
@@ -19,19 +18,21 @@ class UsuarioManager(BaseUserManager):
         extra_fields.setdefault("is_superuser", True)
         return self.create_user(correo_electronico, nombre, password, **extra_fields)
 
-
+class Usuario(AbstractBaseUser):
     nombre = models.CharField(max_length=100)
-    correo_electronico = models.EmailField(unique=True)
+    correo_electronico = models.CharField(max_length=100, unique=True)
+    password = models.CharField(max_length=100)
     fecha_registro = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now=True)
 
+    objects = UsuarioManager()  # Asigna el manager personalizado
 
     USERNAME_FIELD = 'correo_electronico'
     REQUIRED_FIELDS = ['nombre']
 
     def __str__(self):
         return self.nombre
-
     class Meta:
-        db_table = 'Usuario'
-        managed = False
+        managed = False  
+        db_table = 'Usuario'  
+
