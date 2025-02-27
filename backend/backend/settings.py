@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registro',
+<<<<<<< HEAD
+=======
+    'login',
+>>>>>>> 418e541869c9d6e3c44642d4cbb83f05592eddd9
     'login',
     'modificacion_datos',
     
