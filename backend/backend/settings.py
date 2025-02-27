@@ -39,17 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registro',
-<<<<<<< HEAD
-    'login',
-=======
-<<<<<<< HEAD
     'login',
     'modificacion_datos',
     
-=======
->>>>>>> 9f0485b32bd0fc12d6d1c8d2cabbeba4fbcdec30
->>>>>>> 3d79767289ad99796ffc6c4b0f7fe407fbc44e29
 ]
+    
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
