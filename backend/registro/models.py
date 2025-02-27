@@ -18,7 +18,7 @@ class UsuarioManager(BaseUserManager):
         extra_fields.setdefault("is_superuser", True)
         return self.create_user(correo_electronico, nombre, password, **extra_fields)
 
-class Usuario(AbstractBaseUser):  # La clase `Usuario` debe estar bien definida
+class Usuario(AbstractBaseUser):
     nombre = models.CharField(max_length=100)
     correo_electronico = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=100)
