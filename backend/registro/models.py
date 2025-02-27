@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.models import BaseUserManager,AbstractBaseUser
 
 
 
@@ -18,16 +18,17 @@ class UsuarioManager(BaseUserManager):
         extra_fields.setdefault("is_superuser", True)
         return self.create_user(correo_electronico, nombre, password, **extra_fields)
 
-class Usuario(models.Model):  # La clase `Usuario` debe estar bien definida
-    id = models.BigAutoField(primary_key=True)
+class Usuario(AbstractBaseUser):  # La clase `Usuario` debe estar bien definida
     nombre = models.CharField(max_length=100)
     correo_electronico = models.CharField(max_length=100, unique=True)
-    celular = models.CharField(max_length=10)
-    direccion = models.CharField(max_length=255, blank=True, null=True)
-    fecha_registro = models.DateTimeField()
-    last_login = models.DateTimeField()
+    password = models.CharField(max_length=100)
+    fecha_registro = models.DateTimeField(auto_now_add=True)
+    last_login = models.DateTimeField(auto_now=True)
 
     objects = UsuarioManager()  # Asigna el manager personalizado
+
+    USERNAME_FIELD = 'correo_electronico'
+    REQUIRED_FIELDS = ['nombre']
 
     def __str__(self):
         return self.nombre
